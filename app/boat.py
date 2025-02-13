@@ -1,7 +1,7 @@
 import os
 
 
-class RowingBoat:
+class RowingBoat(object):
     """Реализация класса вёсельной лодки"""
 
     def __init__(self):
