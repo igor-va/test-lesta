@@ -23,7 +23,7 @@ class TestFunctional:
         with allure.step(f"Добавление гребца в лодку"):
             boat.add_rower(rower)
         with allure.step(f"Проверка, что гребец добавлен в лодку"):
-            assert rower in boat.rowers
+            assert rower in boat.rowers, f"Ошибка, гребец не был добавлен в лодку"
 
     @allure.title("Удаление гребца")
     @allure.description("Удаление гребца из лодки")
@@ -37,4 +37,4 @@ class TestFunctional:
         with allure.step(f"Удаление гребца из лодки"):
             boat.remove_rower(rower)
         with allure.step(f"Проверка, что гребец удален из лодки"):
-            assert rower not in boat.rowers
+            assert rower not in boat.rowers, f"Ошибка, гребец не был удален из лодки"

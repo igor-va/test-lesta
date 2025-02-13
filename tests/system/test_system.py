@@ -21,7 +21,7 @@ class TestSystem:
         with allure.step(f"Проверка, что процесс гребли запущен"):
             assert boat.is_rowing is True
         with allure.step(f"Проверка, что скорость движения лодки больше 0"):
-            assert boat.get_speed() > 0.0
+            assert boat.get_speed() > 0.0, f"Ошибка, скорость движения лодки не больше 0"
 
     @allure.title("Остановка гребли")
     @allure.description("Остановка процесса гребли на лодке")
@@ -35,4 +35,4 @@ class TestSystem:
         with allure.step(f"Проверка, что процесс гребли остановлен"):
             assert boat.is_rowing is False
         with allure.step(f"Проверка, что скорость движения лодки равно 0"):
-            assert boat.get_speed() == 0.0
+            assert boat.get_speed() == 0.0, f"Ошибка, скорость движения лодки не равно 0"

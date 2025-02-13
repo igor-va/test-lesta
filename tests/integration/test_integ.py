@@ -21,4 +21,4 @@ class TestIntegration:
         with allure.step(f"Изменение позиции лодки"):
             boat.move()
         with allure.step(f"Проверка, что позиция лодки изменилась на величину скорости"):
-            assert boat.get_position() == 5.0
+            assert boat.get_position() == 5.0, f"Ошибка, позиция лодки не изменилась"
