@@ -35,8 +35,10 @@ class RowingBoat:
         return self.speed
 
     def move(self) -> None:
+        """Изменение позиции лодки"""
         if self.is_rowing:
             self.position += self.speed
 
     def get_position(self) -> float:
+        """Получение текущей позиции лодки"""
         return self.position
