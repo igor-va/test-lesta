@@ -5,10 +5,10 @@ class RowingBoat:
     """Реализация класса вёсельной лодки"""
 
     def __init__(self):
-        self.rowers = []  # Добавление гребцов в лодку
-        self.speed = 0.0  # Установка скорости при гребле
-        self.position = 0.0
-        self.is_rowing = False  # Установка процесса гребли
+        self.rowers = []  # Гребцы в лодке
+        self.speed = 0.0  # Текущая скорость лодки
+        self.position = 0.0  # Позиция лодки
+        self.is_rowing = False  # Процесс гребли
 
     def add_rower(self, rower: str) -> None:
         """Добавление гребца в лодку"""
@@ -31,5 +31,12 @@ class RowingBoat:
             self.speed = 0.0
 
     def get_speed(self) -> float:
-        """Получение скорости движения лодки"""
+        """Получение текущей скорости движения лодки"""
         return self.speed
+
+    def move(self) -> None:
+        if self.is_rowing:
+            self.position += self.speed
+
+    def get_position(self) -> float:
+        return self.position
